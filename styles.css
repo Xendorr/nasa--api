@@ -1,0 +1,229 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  font-family: 'Martian Mono', monospace;
+  color: #EAE8ED;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgba(255,255,255, 0.5);
+  border-radius: 5px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #fff;
+}
+
+body {
+  background: #000;
+  background-image: url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+  background-size: cover;
+  background-repeat: no-repeat;
+/*   height: 100dvh; */
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+section {
+  height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.nav {
+  position: sticky-top;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  justify-content: space-between;
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+  width: 90%;
+  margin: 0 auto;
+  height: 70px;
+  background: rgba(0,0,0, 0.75);
+  box-shadow: 0 0 15px 10px rgba(255,255,255, 0.1);
+}
+.left-side span {
+  font-size: 48px;
+  font-weight: 300;
+  letter-spacing: 3px;
+  font-family: 'Chakra Petch', sans-serif;
+}
+.left-side span b{
+  font-family: 'Chakra Petch', sans-serif;
+  font-weight: 700;
+}
+.right-side ul {
+  display: flex;
+  gap: 15px;
+
+}
+.right-side ul li {
+  list-style: none;
+  font-size: 32px;
+}
+.container {
+  width: 80%;
+  height: 80%;
+/*   margin: 50px auto; */
+  background: rgba(0,0,0, 0.75);
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 0 20px 15px rgba(255,255,255, 0.1);
+}
+.container h1 {
+  margin: 25px 0 0 0;
+  font-family: 'Rubik Doodle Shadow', system-ui;
+  font-size: 40px;
+}
+.apod--container {
+  height: 80%;
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.apod--name {
+  text-align: center;
+  color: #000;
+  padding-bottom: 2%;
+}
+.img-description--container {
+  display: flex;
+  height: 100%;
+  margin-top: 30px;
+  width: 95%;
+  gap: 50px;
+}
+.apod-img--container {
+  flex:1;
+  background: rgba(255,255,255, 0.9);
+  border-radius: 20px;
+  box-shadow: 0 0 10px 5px rgba(255,255,255, 0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+  gap: 15px;
+}
+.apod--img {
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+  height: 90%;
+  width: 90%;
+  margin-top: 5%;
+}
+.spinner {
+  width: 30px; height: 30px;
+  border-radius: 50%;
+  border: 4px solid rgba(0,0,0, 0.6);
+  border-left: 4px solid rgba(255,255,255, 1);
+  animation: spinner 1.3s linear infinite;
+}
+@keyframes spinner {
+  0% { transform: rotate(0deg)}
+  100% {transform: rotate(360deg)}
+}
+.loader {
+  font-size: 24px;
+  padding: 15px 0;
+}
+.description {
+  flex: 1;
+  margin-right: 2%;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  height: 100%;
+}
+.apod-description--container {
+  max-height: 80%;
+}
+.apod--description {
+  overflow-y: scroll;
+  max-height: 100%;
+}
+button {
+  all: unset;
+}
+.btn {
+  padding: 15px 40px;
+  border-radius: 24px;
+  font-size: 16px;
+  color: #1B2021;
+  background: #fff;
+  cursor: pointer;
+  text-align: center;
+  align-self: center;
+  margin-top: 20px;
+  box-shadow: 2px 5px 5px rgba(255,255,255, 0.3);
+}
+.btn:hover {
+  background-color: rgba(255,255,255, 0.8);
+  transform: translateY(-1px);
+}
+.btn:active {
+  box-shadow: inset 2px 5px 5px rgba(0,0,0, 0.3);
+}
+
+.images--container {
+  width: 80%; 
+  height: 80%;
+  border-radius: 20px;
+  background: rgba(0,0,0, 0.75);
+  box-shadow: 0 0 20px 15px rgba(255,255,255, 0.1);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+.image {
+  background-size: cover;
+  height: 400px;
+}
+footer {
+  height: 250px;
+  width: 90%;
+  background: rgba(0,0,0, 0.75);
+  box-shadow: 0 0 20px 15px rgba(255,255,255, 0.1);
+  margin: 0 auto;
+  border-radius: 20px;
+  display: flex;
+}
+.footer--left-side {
+  flex: 1;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.footer--left-side span {
+  transform: rotate(-10deg);
+  font-size: 48px;
+  font-weight: 100;
+  font-family: 'Chakra Petch', sans-serif;
+}
+.footer--left-side span b {
+  font-family: 'Chakra Petch', sans-serif;
+}
+.footer--right-side {
+  flex: 1;
+  height: 100%;
+}
