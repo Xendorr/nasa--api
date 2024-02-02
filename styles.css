@@ -7,6 +7,13 @@
   color: #EAE8ED;
 }
 
+ul,li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+
 /* width */
 ::-webkit-scrollbar {
   width: 8px;
@@ -38,44 +45,39 @@ body {
   overflow-x: hidden;
 }
 section {
-  height: 100dvh;
+  height: 95dvh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
-.nav {
-  position: sticky-top;
+header {
   display: flex;
+  gap: 2%;
+  justify-content: center;
   align-items: center;
-  padding: 0 20px;
-  justify-content: space-between;
-  border-bottom-left-radius: 30px;
-  border-bottom-right-radius: 30px;
   width: 90%;
   margin: 0 auto;
   height: 70px;
   background: rgba(0,0,0, 0.75);
-  box-shadow: 0 0 15px 10px rgba(255,255,255, 0.1);
+  border-radius: 16px;
+  box-shadow: 0 0 20px 15px rgba(255,255,255, 0.1);
 }
-.left-side span {
+header p {
+  font-size: 40px;
+  font-weight: 400;
+  font-family: 'Martian Mono', monospace;
+  word-spacing: -15px;
+}
+header span {
   font-size: 48px;
   font-weight: 300;
   letter-spacing: 3px;
   font-family: 'Chakra Petch', sans-serif;
 }
-.left-side span b{
+header span b{
   font-family: 'Chakra Petch', sans-serif;
   font-weight: 700;
-}
-.right-side ul {
-  display: flex;
-  gap: 15px;
-
-}
-.right-side ul li {
-  list-style: none;
-  font-size: 32px;
 }
 .container {
   width: 80%;
@@ -89,17 +91,23 @@ section {
   box-shadow: 0 0 20px 15px rgba(255,255,255, 0.1);
 }
 .container h1 {
-  margin: 25px 0 0 0;
+  margin: 20px 0 0 0;
   font-family: 'Rubik Doodle Shadow', system-ui;
   font-size: 40px;
 }
+.container p {
+  margin: 15px 0 0 0;
+}
+.container p span {
+  font-weight: 700;
+}
 .apod--container {
   height: 80%;
-  margin-top: 15px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  padding: 10px 0;
 }
 .apod--name {
   text-align: center;
@@ -127,11 +135,27 @@ section {
 .apod--img {
   background-size: cover;
   background-repeat: no-repeat;
+  background-position: center;
   position: relative;
   height: 90%;
   width: 90%;
   margin-top: 5%;
 }
+.spin-load {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  visibility: visible;
+  opacity: 1;
+  transition: all 0.2s ease-in;
+}
+.spin-load .invisible{
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.2s ease-out;
+}
+
 .spinner {
   width: 30px; height: 30px;
   border-radius: 50%;
@@ -143,6 +167,7 @@ section {
   0% { transform: rotate(0deg)}
   100% {transform: rotate(360deg)}
 }
+
 .loader {
   font-size: 24px;
   padding: 15px 0;
@@ -157,6 +182,15 @@ section {
 }
 .apod-description--container {
   max-height: 80%;
+}
+.apod-description--container .policy {
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 20px;
+  font-size: 12px;
+  font-style: italic;
+  color: rgba(255,255,255, 0.5);
 }
 .apod--description {
   overflow-y: scroll;
@@ -184,19 +218,37 @@ button {
 .btn:active {
   box-shadow: inset 2px 5px 5px rgba(0,0,0, 0.3);
 }
-
-.images--container {
-  width: 80%; 
-  height: 80%;
+.marsRover--container {
+  width: 80vw; 
+  height: 80vh;
   border-radius: 20px;
   background: rgba(0,0,0, 0.75);
   box-shadow: 0 0 20px 15px rgba(255,255,255, 0.1);
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+}
+.marsRover--title {
+  text-align: center;
+  font-family: 'Martian Mono', monospace !important;
+  padding: 10px;
+}
+.load-more-images {
+  height: 7.5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.images--container {
+  height: 85%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  overflow-y: scroll;
 }
 .image {
   background-size: cover;
-  height: 400px;
+  height: 80%;
+  width: calc((100%/3) - 20px);
+  margin: 10px;
 }
 footer {
   height: 250px;
@@ -206,6 +258,7 @@ footer {
   margin: 0 auto;
   border-radius: 20px;
   display: flex;
+  position: relative;
 }
 .footer--left-side {
   flex: 1;
@@ -216,7 +269,7 @@ footer {
 }
 .footer--left-side span {
   transform: rotate(-10deg);
-  font-size: 48px;
+  font-size: 60px;
   font-weight: 100;
   font-family: 'Chakra Petch', sans-serif;
 }
@@ -225,5 +278,28 @@ footer {
 }
 .footer--right-side {
   flex: 1;
+  font-size: 12px;
   height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.footer--text-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+.footer--text-container p:nth-child(2) {
+  text-align: center;
+}
+small {
+  position: absolute;
+  bottom: 15px;
+  left: 50%; transform: translateX(-50%)
+}
+small:hover a {
+  margin-bottom: 2px;
+  border-bottom: 1px solid #fff;
 }

@@ -13,19 +13,9 @@
     <script src="script.js" defer></script>
 </head>
 <body>
-    <navbar class="nav">
-        <div class="left-side">
-        <span> <b>SPACE</b>SHUTTERS </span>
-        </div>
-        <div class="right-side">
-        <ul>
-            <li> HOME </li>
-            <li> PICTURES </li>
-            <li> IDK </li>
-            <li> LATER </li>
-        </ul>
-        </div>
-  </navbar>
+  <header>
+        <p>Welcome to</p> <span><b>SPACE</b>SHUTTERS </span>
+  </header>
   <section class="landing">
     <div class="container">
       <h1> Astronomy picture of the day </h1>
@@ -33,11 +23,21 @@
         <div class="spinner"></div>
         <span class="loader"> Loading... </span>
       </div>
+      <p> Come back <span>everyday</span> for a new picture!</p>
     </div>
   </section>
   <section class="images">
-    <div class="images--container">
-      
+    <div class="marsRover--container">
+      <h1 class="marsRover--title">Mars Rover images</h1>
+      <div class="images--container">
+        <div class="spin-load">
+          <div class="spinner"></div>
+          <span class="loader"> Please wait </span>
+        </div>
+      </div>
+      <div class="load-more-images">
+        <p> Scroll down to see more images </p>
+      </div>
     </div>
   </section>
   <footer>
@@ -45,8 +45,12 @@
       <span> <b>SPACE</b>SHUTTERS </span>
     </div>
     <div class="footer--right-side">
-      
+      <div class="footer--text-container">
+        <p> This project has been developed utilizing the complimentary NASA API. Should you experience any difficulties in accessing the content, please note that the API imposes a monthly quota on data retrieval. We appreciate your understanding as these limitations are beyond our control. </p>
+        <p> Should you encounter any further issues, we kindly request that you direct your inquiries to the website's author for assistance. </p>
+      </div>
     </div>
+    <small>&copy; <a href='https://mariusbobitiu.dev' target="_blank" referrerpolicy="noreferrer">MariusBobitiu--dev</a></small>
   </footer>
 
 </body>
