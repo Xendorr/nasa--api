@@ -60,7 +60,8 @@ header {
   margin: 0 auto;
   height: 70px;
   background: rgba(0,0,0, 0.75);
-  border-radius: 16px;
+  border-bottom-left-radius: 16px;
+  border-bottom-right-radius: 16px;
   box-shadow: 0 0 20px 15px rgba(255,255,255, 0.1);
 }
 header p {
@@ -256,7 +257,8 @@ footer {
   background: rgba(0,0,0, 0.75);
   box-shadow: 0 0 20px 15px rgba(255,255,255, 0.1);
   margin: 0 auto;
-  border-radius: 20px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
   display: flex;
   position: relative;
 }
@@ -302,4 +304,172 @@ small {
 small:hover a {
   margin-bottom: 2px;
   border-bottom: 1px solid #fff;
+}
+
+@media screen and (max-width: 640px) {
+  header {
+    height: 50px;
+    width: 95%;
+    position: absolute;
+    top: 0; left: 50%;
+    transform: translateX(-50%);
+    border: 1px solid rgba(255,255,255, 0.15);
+    box-shadow: 0 0 10px 5px rgba(255,255,255, 0.1);
+    
+    p {
+      font-size: 20px;
+    }
+    span {
+      font-size: 20px;
+    }
+  }
+  .landing {
+    justify-content: flex-end;
+  }
+  .container {
+    width: 100%;
+    height: 90%;
+    justify-content: space-evenly;
+    box-shadow: none;
+    background: rgba(0,0,0, 0.5);
+    border: 1px solid rgba(255,255,255, 0.15);
+
+    h1 {
+      font-size: 16px;
+    }
+    p {
+      font-size: 10px;
+    }
+    .img-description--container {
+      flex-direction: column;
+      height: 100%;
+    }
+    .description{
+      gap: 5px;
+      font-size: 11px;
+      text-align: center;
+    }
+    .apod--description {
+      margin: 5px 0 10px 0;
+    }
+    .apod--name {
+      font-size: 12px;
+    }
+  }
+  .apod-description--container .policy {
+    bottom: 0;
+    font-size: 9px;
+  }
+  .btn {
+    font-size: 12px;
+    padding: 12px 36px;
+    width: 70%;
+  }
+  .apod--img {
+    min-height: 250px;
+  }
+  .img-description--container {
+    overflow-y: scroll;
+  }
+
+  .marsRover--container {
+    width: 100%;
+    height: 90%;
+    background: rgba(0,0,0, 0.5);
+    box-shadow: none;
+    border: 1px solid rgba(255,255,255, 0.2);
+  }
+  .marsRover--title {
+    font-size: 18px;
+  }
+  .image {
+    width: 100%;
+    height: 30%;
+  }
+
+  footer {
+    flex-direction: column;
+    padding-bottom: 25px;
+    width: 95%;
+
+    .footer--left-side span {
+      font-size: 20px;
+    }
+    .footer--right-side {
+      font-size: 11px;
+      text-align: center;
+    }
+    small {
+      bottom: 5px;
+      font-size: 8px;
+    }
+  }
+
+}
+
+@media screen and (min-width: 640px) and (max-width: 1140px) {
+  header {
+    gap: 1.5%;
+    width: 95%;
+
+    p, span{
+      font-size: 30px;
+    }
+  }
+  .landing {
+    height: 90dvh;
+
+    .container {
+      justify-content: space-between;
+      padding: 10px;
+      width: 85%;
+      
+      .apod--container {
+        height: 75%;
+      }
+      .img-description--container {
+        margin: 0;
+
+        .policy {
+          font-size: 9px;
+          bottom: 0;
+        }
+      }
+      h1 {
+        font-size: 24px;
+        margin: 5px 0 0 0;
+      }
+      .apod--name {
+        font-size: 18px;
+      }
+      p{
+        margin: 0 0 8px 0;
+      }
+      .description {
+        font-size: 12px;
+        padding-bottom: 10px;
+        height: 90%;
+      }
+      .btn {
+        font-size: 12px;
+        padding: 12px 36px;
+      }
+    }
+    
+  }
+
+  .marsRover--container {
+    width: 85%;
+    padding: 10px;
+  }
+
+  footer {
+    width: 95%;
+
+    .footer--left-side {
+      span {
+        font-size: 45px;
+      }
+    }
+  }
 }
